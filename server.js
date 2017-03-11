@@ -4,6 +4,7 @@ const port = process.env.PORT || 8080;
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const app = express();
 require('babel-polyfill');
 
@@ -24,6 +25,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 
+//cors cover
+app.use( cors() );
 
 // app.set('trust proxy', 1);
 
